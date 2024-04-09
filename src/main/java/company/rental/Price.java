@@ -1,23 +1,22 @@
-package model;
+package company.rental;
 
-import service.PriceComponents;
-
-public class Price {
-    private float priceAmountClientMultiplicationFactor;
+class Price {
+    private final float priceAmountClientMultiplicationFactor;
 
     PriceComponents priceComponents;
 
     public Price(PriceComponents priceComponents, boolean clientWithImmediatePayment, float priceAmountClientMultiplicationFactor) {
         this.priceComponents = priceComponents;
-        this.priceAmountClientMultiplicationFactor = priceAmountClientMultiplicationFactor;
 
         if (!clientWithImmediatePayment) {
-            priceAmountClientMultiplicationFactor = 1;
+            this.priceAmountClientMultiplicationFactor = 1;
+        } else {
+            this.priceAmountClientMultiplicationFactor = priceAmountClientMultiplicationFactor;
         }
     }
 
-    public float calculate(PriceComponents priceComponents, int minutes) {
-        return priceComponents.getUnlocking() + priceComponents.getPricePerMinute() * minutes * priceAmountClientMultiplicationFactor;
+    public float calculate(PriceComponents priceComponents, UsageTime minutes) {
+        return priceComponents.getUnlocking() + priceComponents.getPricePerMinute() * minutes.minutes() * priceAmountClientMultiplicationFactor;
     }
 
     public float getPriceAmountClientMultiplicationFactor() {
