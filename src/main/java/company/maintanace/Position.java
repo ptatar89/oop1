@@ -1,4 +1,4 @@
-package company.maintanace;
+package main.java.company.maintanace;
 
 public record Position(Latitude latitude, Longitude longitude) {
 

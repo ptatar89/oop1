@@ -1,6 +1,6 @@
-package company.repository;
+package main.java.company.repository;
 
-import company.loyality.TransactionCounter;
+import main.java.company.loyality.TransactionCounter;
 
 import java.util.HashMap;
 

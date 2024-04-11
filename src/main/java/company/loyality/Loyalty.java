@@ -1,7 +1,7 @@
-package company.loyality;
+package main.java.company.loyality;
 
 
-import company.rental.UsageTime;
+import main.java.company.rental.UsageTime;
 
 public class Loyalty {
 

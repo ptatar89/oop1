@@ -1,4 +1,4 @@
-package company;
+package main.java.company;
 
 public record ClientId(Long id) {
     public ClientId {

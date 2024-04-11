@@ -1,13 +1,13 @@
-package company;
+package main.java.company;
 
-import company.loyality.TransactionCounter;
-import company.repository.TestDB;
+import main.java.company.loyality.TransactionCounter;
+import main.java.company.repository.TestDB;
 
 import java.util.HashMap;
 
-import static company.repository.TestDB.CLIENT_CREDIT;
-import static company.repository.TestDB.CLIENT_WITH_IMMEDIATE_PAYMENT;
-import static company.repository.TestDB.IMMEDIATE_TRANSACTIONS_COUNTER;
+import static main.java.company.repository.TestDB.CLIENT_CREDIT;
+import static main.java.company.repository.TestDB.CLIENT_WITH_IMMEDIATE_PAYMENT;
+import static main.java.company.repository.TestDB.IMMEDIATE_TRANSACTIONS_COUNTER;
 
 public class Client {
     ClientId clientId;

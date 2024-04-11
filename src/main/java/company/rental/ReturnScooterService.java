@@ -1,18 +1,18 @@
-package company.rental;
+package main.java.company.rental;
 
-import company.Client;
-import company.ClientId;
-import company.loyality.Loyalty;
-import company.maintanace.Position;
-import company.repository.TestDB;
+import main.java.company.Client;
+import main.java.company.ClientId;
+import main.java.company.loyality.Loyalty;
+import main.java.company.maintanace.Position;
+import main.java.company.repository.TestDB;
 
 import java.util.HashMap;
 
-import static company.repository.TestDB.CHARGE_AMOUNT;
-import static company.repository.TestDB.CLIENT_WITH_IMMEDIATE_PAYMENT;
-import static company.repository.TestDB.IMMEDIATE_TRANSACTIONS_COUNTER;
-import static company.repository.TestDB.LOYALTY_POINTS;
-import static company.repository.TestDB.SCOOTER_DATA;
+import static main.java.company.repository.TestDB.CHARGE_AMOUNT;
+import static main.java.company.repository.TestDB.CLIENT_WITH_IMMEDIATE_PAYMENT;
+import static main.java.company.repository.TestDB.IMMEDIATE_TRANSACTIONS_COUNTER;
+import static main.java.company.repository.TestDB.LOYALTY_POINTS;
+import static main.java.company.repository.TestDB.SCOOTER_DATA;
 
 public class ReturnScooterService {
 

@@ -29,7 +29,7 @@ public class Scooter {
         return price;
     }
 
-    boolean scheduleForMaintenance(Position where) {
+    boolean scheduleForMaintenance(company.maintanace.Position where) {
         if (batteryLevel < 0.07) {
             scheduleForMaintenance = true;
         }

@@ -1,4 +1,4 @@
-package company.rental;
+package main.java.company.rental;
 
 class Price {
     private final float priceAmountClientMultiplicationFactor;
