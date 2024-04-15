@@ -1,6 +1,8 @@
-package main.java.company.rental;
+package main.java.company.price;
 
-class PriceCalculator {
+import main.java.company.rental.UsageTime;
+
+public class PriceCalculator {
 
     //returned value should be value object because price cannot be less then 0
     public static float calculate(Object[] scooterData, Boolean isImmediatePayment, UsageTime minutes, float priceAmountClientMultiplicationFactor) {

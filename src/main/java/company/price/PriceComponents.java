@@ -1,4 +1,4 @@
-package main.java.company.rental;
+package main.java.company.price;
 
 class PriceComponents {
 

@@ -1,3 +1,5 @@
+import main.java.company.maintanace.Position;
+
 public class Scooter {
 
     private Long scooterId;
@@ -29,7 +31,7 @@ public class Scooter {
         return price;
     }
 
-    boolean scheduleForMaintenance(company.maintanace.Position where) {
+    boolean scheduleForMaintenance(Position where) {
         if (batteryLevel < 0.07) {
             scheduleForMaintenance = true;
         }

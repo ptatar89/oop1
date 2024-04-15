@@ -1,4 +1,6 @@
-package main.java.company.rental;
+package main.java.company.price;
+
+import main.java.company.rental.UsageTime;
 
 class Price {
     private final float priceAmountClientMultiplicationFactor;

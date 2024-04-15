@@ -8,6 +8,7 @@ public class TestDB {
     public static final String SCOOTER_DATA = "scooterData";
     public static final String CLIENT_WITH_IMMEDIATE_PAYMENT = "clientWithImmediatePayment";
     public static final String CLIENT_CREDIT = "clientCredit";
+    public static final String CLIENT_TYPE = "clientType";
     public static final String IMMEDIATE_TRANSACTIONS_COUNTER = "immediateTransactionsCounter";
     public static final String SCOOTER_ID = "scooterId";
     public static final String BATTERY_LEVEL = "batteryLevel";
@@ -27,7 +28,8 @@ public class TestDB {
 
         clientData.put(CLIENT_ID, clientId);
         clientData.put(CLIENT_CREDIT, 123.23f);
-        clientData.put(CLIENT_WITH_IMMEDIATE_PAYMENT, true);
+        clientData.put(CLIENT_TYPE, "business");
+        clientData.put(CLIENT_WITH_IMMEDIATE_PAYMENT, false);
         clientData.put(IMMEDIATE_TRANSACTIONS_COUNTER, 32);
 
         // load client data db

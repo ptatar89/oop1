@@ -5,7 +5,7 @@ import main.java.company.repository.Database;
 
 import java.util.HashMap;
 
-class Scooter {
+public class Scooter {
 
     ScooterId scooterId;
 
