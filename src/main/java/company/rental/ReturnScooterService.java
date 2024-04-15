@@ -1,8 +1,7 @@
 package main.java.company.rental;
 
 import main.java.company.client.Client;
-import main.java.company.client.ClientService;
-import main.java.company.client.Individual;
+import main.java.company.client.ClientProvider;
 import main.java.company.client.ClientId;
 import main.java.company.loyality.Loyalty;
 import main.java.company.maintanace.Position;
@@ -20,7 +19,7 @@ import static main.java.company.repository.TestDB.SCOOTER_DATA;
 public class ReturnScooterService {
 
     private final TestDB testDB = new TestDB();
-    private static final ClientService clientService = new ClientService();
+    private static final ClientProvider clientService = new ClientProvider();
 
     public static void returnScooter(ClientId clientId, ScooterId scooterId, Position position, UsageTime minutes, TestDB testDB) {
         //metoda returnScooter ma 4 parametry - clientId, scooterId, where, minutes

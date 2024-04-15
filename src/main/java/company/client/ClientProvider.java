@@ -5,7 +5,7 @@ import main.java.company.repository.TestDB;
 
 import static main.java.company.client.ClientType.ClientTypeMapper.map;
 
-public class ClientService {
+public class ClientProvider {
     private final TestDB testDB = new TestDB();
 
     public Client getClientById(ClientId clientId) {
