@@ -5,7 +5,7 @@ public interface Client {
     void immediateTransactionsIncrease();
     ClientId getClientId();
 
-    float getClientCredit();
+    ClientCredit getClientCredit();
 
     boolean isClientWithImmediatePayment();
 

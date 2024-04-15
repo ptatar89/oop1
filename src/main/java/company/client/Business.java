@@ -7,12 +7,12 @@ import static main.java.company.client.ClientType.BUSINESS;
 
 public class Business implements Client {
     ClientId clientId;
-    float clientCredit;
+    ClientCredit clientCredit;
     boolean clientWithImmediatePayment;
     TransactionCounter immediateTransactionsCounter;
     static final ClientType clientType = BUSINESS;
 
-    public Business(ClientId clientId, float clientCredit, boolean clientWithImmediatePayment,
+    public Business(ClientId clientId, ClientCredit clientCredit, boolean clientWithImmediatePayment,
                     TransactionCounter transactionCounter) {
         this.clientId = clientId;
         this.clientCredit = clientCredit;
@@ -31,7 +31,7 @@ public class Business implements Client {
     }
 
     @Override
-    public float getClientCredit() {
+    public ClientCredit getClientCredit() {
         return clientCredit;
     }
 

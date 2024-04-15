@@ -13,13 +13,13 @@ public class ClientProvider {
     }
 
     private Client clientFactory(ClientDTO clientData) {
-        switch (map(clientData.clientType)) {
+        switch (clientData.clientType) {
             case BUSINESS -> {
                 return new Business(
                         new ClientId(clientData.clientId),
                         clientData.clientCredit,
                         clientData.clientWithImmediatePayment,
-                        new TransactionCounter(clientData.immediateTransactionsCounter)
+                        clientData.immediateTransactionsCounter
                 );
             }
             case INDIVIDUAL -> {
@@ -27,7 +27,7 @@ public class ClientProvider {
                         new ClientId(clientData.clientId),
                         clientData.clientCredit,
                         clientData.clientWithImmediatePayment,
-                        new TransactionCounter(clientData.immediateTransactionsCounter)
+                        clientData.immediateTransactionsCounter
                 );
             }
             default -> throw new RuntimeException("not supported client type");
