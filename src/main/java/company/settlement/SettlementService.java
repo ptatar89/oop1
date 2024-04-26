@@ -1,7 +1,7 @@
-package main.java.company.settlement;
+package company.settlement;
 
-import main.java.company.client.Client;
-import main.java.company.rental.Ride;
+import company.client.Client;
+import company.rental.Ride;
 
 import java.util.List;
 

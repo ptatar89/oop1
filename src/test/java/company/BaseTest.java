@@ -1,4 +1,4 @@
-package company;
+package test.java.company;
 
 import company.repository.TestDB;
 import org.junit.jupiter.api.BeforeEach;

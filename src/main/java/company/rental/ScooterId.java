@@ -1,4 +1,4 @@
-package main.java.company.rental;
+package company.rental;
 
 public record ScooterId(Long id) {
     public ScooterId {

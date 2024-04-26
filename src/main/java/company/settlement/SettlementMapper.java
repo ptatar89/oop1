@@ -1,8 +1,8 @@
-package main.java.company.settlement;
+package company.settlement;
 
-import main.java.company.client.ClientType;
+import company.client.ClientType;
 
-import static main.java.company.client.ClientType.BUSINESS;
+import static company.client.ClientType.BUSINESS;
 
 public class SettlementMapper {
 

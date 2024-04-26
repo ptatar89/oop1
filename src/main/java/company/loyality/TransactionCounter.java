@@ -1,4 +1,4 @@
-package main.java.company.loyality;
+package company.loyality;
 
 public class TransactionCounter {
 

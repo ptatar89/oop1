@@ -1,7 +1,7 @@
-package main.java.company.rental;
+package company.rental;
 
-import main.java.company.maintanace.Battery;
-import main.java.company.repository.Database;
+import company.maintanace.Battery;
+import company.repository.Database;
 
 import java.util.HashMap;
 

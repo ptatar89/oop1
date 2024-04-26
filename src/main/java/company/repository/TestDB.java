@@ -1,4 +1,4 @@
-package main.java.company.repository;
+package company.repository;
 
 import java.util.HashMap;
 
@@ -28,7 +28,7 @@ public class TestDB {
 
         clientData.put(CLIENT_ID, clientId);
         clientData.put(CLIENT_CREDIT, 123.23f);
-        clientData.put(CLIENT_TYPE, "business");
+        clientData.put(CLIENT_TYPE, "BUSINESS");
         clientData.put(CLIENT_WITH_IMMEDIATE_PAYMENT, false);
         clientData.put(IMMEDIATE_TRANSACTIONS_COUNTER, 32);
 

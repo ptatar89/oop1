@@ -1,5 +1,8 @@
-package company.maintanace;
+package test.java.company.maintanace;
 
+import company.maintanace.Latitude;
+import company.maintanace.Longitude;
+import company.maintanace.Position;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

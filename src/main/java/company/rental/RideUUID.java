@@ -1,4 +1,4 @@
-package main.java.company.rental;
+package company.rental;
 
 import java.util.UUID;
 

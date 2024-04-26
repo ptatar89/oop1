@@ -1,27 +1,27 @@
-package main.java.company.rental;
+package company.rental;
 
-import main.java.company.client.Client;
-import main.java.company.client.ClientProvider;
-import main.java.company.client.ClientId;
-import main.java.company.loyality.Loyalty;
-import main.java.company.maintanace.Position;
-import main.java.company.price.PriceCalculator;
-import main.java.company.repository.TestDB;
+import company.client.Client;
+import company.client.ClientProvider;
+import company.client.ClientId;
+import company.loyality.Loyalty;
+import company.maintanace.Position;
+import company.price.PriceCalculator;
+import company.repository.TestDB;
 
 import java.util.HashMap;
 
-import static main.java.company.repository.TestDB.CHARGE_AMOUNT;
-import static main.java.company.repository.TestDB.CLIENT_WITH_IMMEDIATE_PAYMENT;
-import static main.java.company.repository.TestDB.IMMEDIATE_TRANSACTIONS_COUNTER;
-import static main.java.company.repository.TestDB.LOYALTY_POINTS;
-import static main.java.company.repository.TestDB.SCOOTER_DATA;
+import static company.repository.TestDB.CHARGE_AMOUNT;
+import static company.repository.TestDB.CLIENT_WITH_IMMEDIATE_PAYMENT;
+import static company.repository.TestDB.IMMEDIATE_TRANSACTIONS_COUNTER;
+import static company.repository.TestDB.LOYALTY_POINTS;
+import static company.repository.TestDB.SCOOTER_DATA;
 
 public class ReturnScooterService {
 
     private final TestDB testDB = new TestDB();
-    private static final ClientProvider clientService = new ClientProvider();
 
     public static void returnScooter(ClientId clientId, ScooterId scooterId, Position position, UsageTime minutes, TestDB testDB) {
+        ClientProvider clientService = new ClientProvider(testDB.getClientData(clientId.id()));
         //metoda returnScooter ma 4 parametry - clientId, scooterId, where, minutes
         //resztę pobieramy na podstawię clientId i scooterId z bazy
         //(batteryLevel, Object[] scooterData, float clientCredit, boolean clientWithImmediatePayment, int immediateTransactionsCounter)

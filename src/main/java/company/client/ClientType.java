@@ -1,20 +1,18 @@
-package main.java.company.client;
+package company.client;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.Arrays;
 
 @AllArgsConstructor
 public enum ClientType {
-    INDIVIDUAL("individual"),
-    BUSINESS("business");
+    INDIVIDUAL,
+    BUSINESS;
 
-    @Getter
-    private final String clientTypeName;
-
-    static class ClientTypeMapper {
-        static ClientType map(String clientType) {
-            return ClientType.valueOf(clientType);
-        }
+    public static ClientType fromName(@Nullable String name) {
+        return valueOf(name);
     }
 
 }

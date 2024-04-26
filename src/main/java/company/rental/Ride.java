@@ -1,6 +1,6 @@
-package main.java.company.rental;
+package company.rental;
 
-import main.java.company.maintanace.Position;
+import company.maintanace.Position;
 
 import java.time.LocalDateTime;
 
@@ -10,6 +10,8 @@ public class Ride {
     Position endPosition;
     LocalDateTime startTime;
     LocalDateTime endTime;
+
+    String freeExtraTime;
 
     public Ride() {
         rideId = RideUUID.generate();

@@ -1,4 +1,4 @@
-package main.java.company.maintanace;
+package company.maintanace;
 
 public class Battery {
 

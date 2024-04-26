@@ -1,8 +1,8 @@
-package main.java.company.client;
+package company.client;
 
-import main.java.company.loyality.TransactionCounter;
+import company.loyality.TransactionCounter;
 
-import static main.java.company.client.ClientType.INDIVIDUAL;
+import static company.client.ClientType.INDIVIDUAL;
 
 public class Individual implements Client {
     ClientId clientId;

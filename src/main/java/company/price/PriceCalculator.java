@@ -1,6 +1,6 @@
-package main.java.company.price;
+package company.price;
 
-import main.java.company.rental.UsageTime;
+import company.rental.UsageTime;
 
 public class PriceCalculator {
 

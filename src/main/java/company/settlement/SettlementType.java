@@ -1,4 +1,4 @@
-package main.java.company.settlement;
+package company.settlement;
 
 public enum SettlementType {
     MONTHLY,

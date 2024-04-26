@@ -1,15 +1,19 @@
-package main.java.company.client;
+package company.client;
 
-import main.java.company.loyality.TransactionCounter;
-import main.java.company.repository.TestDB;
+import company.repository.TestDB;
 
-import static main.java.company.client.ClientType.ClientTypeMapper.map;
+import java.util.HashMap;
+
 
 public class ClientProvider {
-    private final TestDB testDB = new TestDB();
+    private final HashMap<String, Object> clientData;
+
+    public ClientProvider(HashMap<String, Object> clientData) {
+        this.clientData = clientData;
+    }
 
     public Client getClientById(ClientId clientId) {
-        return clientFactory(ClientDTO.rawDataToObject(testDB.getClientData(clientId.id())));
+        return clientFactory(ClientDTO.rawDataToObject(clientData));
     }
 
     private Client clientFactory(ClientDTO clientData) {

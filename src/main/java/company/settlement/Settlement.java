@@ -1,6 +1,6 @@
-package main.java.company.settlement;
+package company.settlement;
 
-import main.java.company.rental.Ride;
+import company.rental.Ride;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package main.java.company.rental;
+package company.rental;
 
 public record UsageTime(Integer minutes) {
     public UsageTime {
