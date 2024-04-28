@@ -1,4 +1,4 @@
-package test.java.company.rental;
+package company.rental;
 
 import company.rental.UsageTime;
 import org.junit.jupiter.api.Test;

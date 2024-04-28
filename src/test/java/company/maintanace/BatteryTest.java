@@ -1,4 +1,4 @@
-package test.java.company.maintanace;
+package company.maintanace;
 
 import test.java.company.BaseTest;
 import company.maintanace.Battery;

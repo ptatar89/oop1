@@ -1,4 +1,4 @@
-package test.java.company.maintanace;
+package company.maintanace;
 
 import company.maintanace.Latitude;
 import company.maintanace.Longitude;

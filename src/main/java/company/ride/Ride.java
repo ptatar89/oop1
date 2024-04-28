@@ -8,4 +8,6 @@ public interface Ride {
     void start(Position position, LocalDateTime time);
 
     void end(Position position, LocalDateTime time);
+
+    Long duration();
 }

@@ -1,4 +1,4 @@
-package test.java.company.rental;
+package company.rental;
 
 import test.java.company.BaseTest;
 import company.client.ClientId;
