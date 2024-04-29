@@ -30,11 +30,16 @@ public class ExtraTime implements Ride {
 
     @Override
     public Long duration() {
-        if (Duration.between(start.time().minusMinutes(EXTRA_TIME), end.time()).toMinutes() < 0L) {
+        return Duration.between(start.time(), end.time()).toMinutes();
+    }
+
+    @Override
+    public Long durationToBeSettled() {
+        if (Duration.between(start.time().plusMinutes(EXTRA_TIME), end.time()).toMinutes() < 0L) {
             return 0L;
         }
 
-        return Duration.between(start.time(), end.time()).toMinutes();
+        return Duration.between(start.time().plusMinutes(EXTRA_TIME), end.time()).toMinutes();
     }
 
 }

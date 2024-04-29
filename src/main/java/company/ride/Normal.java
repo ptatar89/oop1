@@ -26,4 +26,9 @@ public class Normal implements Ride {
     public Long duration() {
         return Duration.between(start.time(), end.time()).toMinutes();
     }
+
+    @Override
+    public Long durationToBeSettled() {
+        return duration();
+    }
 }

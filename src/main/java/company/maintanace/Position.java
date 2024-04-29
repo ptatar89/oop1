@@ -9,4 +9,11 @@ public record Position(Latitude latitude, Longitude longitude) {
             throw new RuntimeException("Coordinates not from Poland");
     }
 
+    public static Position from(Float latitude, Float longitude) {
+        return new Position(
+                new Latitude(latitude),
+                new Longitude(longitude)
+        );
+    }
+
 }

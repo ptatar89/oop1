@@ -10,4 +10,6 @@ public interface Ride {
     void end(Position position, LocalDateTime time);
 
     Long duration();
+
+    Long durationToBeSettled();
 }
