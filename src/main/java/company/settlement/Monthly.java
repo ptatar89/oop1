@@ -1,13 +1,19 @@
 package company.settlement;
 
-import company.rental.Ride;
+import company.ride.Ride;
 
 import java.util.List;
 
+import static java.lang.Long.sum;
+
 public class Monthly implements Settlement {
 
+    Long duration = 0L;
+
     @Override
-    public void settle(List<Ride> ridesToSettle) {
-        throw new RuntimeException("not implemented yet");
+    public Long settle(List<Ride> ridesToSettle) {
+        ridesToSettle.forEach(ride -> duration = sum(duration, ride.durationToBeSettled()));
+
+        return duration;
     }
 }

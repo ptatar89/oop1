@@ -9,23 +9,23 @@ import java.time.YearMonth;
 
 public class ExtraTime implements Ride {
 
-    static Long EXTRA_TIME = 15L;
+    public static Long EXTRA_TIME = 15L;
 
     Long extraTime;
 
+    RideId id;
     RideDetails start;
-
     RideDetails end;
 
-    ExtraTime(Long extraTime) {
+    public ExtraTime(Long extraTime) {
         this.extraTime = extraTime;
     }
 
     @Override
-    public void start(Position position, LocalDateTime time) {
+    public void start(RideId id, Position position, LocalDateTime time) {
+        this.id = id;
         start = new RideDetails(position, time);
     }
-
     @Override
     public void end(Position position, LocalDateTime time) {
         end = new RideDetails(position, time);

@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 import java.time.YearMonth;
 
 public interface Ride {
-    void start(Position position, LocalDateTime time);
+    void start(RideId id, Position position, LocalDateTime time);
 
     void end(Position position, LocalDateTime time);
 

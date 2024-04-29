@@ -19,7 +19,7 @@ class ExtraTimeTest {
         LocalDateTime endTime = LocalDateTime.parse("2024-02-10T10:30:00");
 
         Ride ride = new ExtraTime(EXTRA_TIME);
-        ride.start(TEST_START_POSITION, startTime);
+        ride.start(new RideId(1L), TEST_START_POSITION, startTime);
         ride.end(TEST_END_POSITION, endTime);
 
         //expected

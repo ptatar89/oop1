@@ -1,9 +1,9 @@
 package company.settlement;
 
-import company.rental.Ride;
+import company.ride.Ride;
 
 import java.util.List;
 
 public interface Settlement {
-    void settle(List<Ride> ridesToSettle);
+    Long settle(List<Ride> ridesToSettle);
 }

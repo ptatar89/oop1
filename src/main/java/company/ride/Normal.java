@@ -5,23 +5,17 @@ import company.maintanace.Position;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.YearMonth;
-import java.time.temporal.Temporal;
-import java.time.temporal.TemporalUnit;
 
 public class Normal implements Ride {
 
+    RideId id;
     RideDetails start;
     RideDetails end;
 
-//    public static Ride create(RideDetails start, RideDetails end) {
-//        this.start = start;
-//        this.end = end;
-//
-//        return this;
-//    }
 
     @Override
-    public void start(Position position, LocalDateTime time) {
+    public void start(RideId id, Position position, LocalDateTime time) {
+        this.id = id;
         start = new RideDetails(position, time);
     }
 
