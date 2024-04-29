@@ -1,6 +1,10 @@
 package company.repository;
 
+import company.ride.Ride;
+
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 
 //Generic db, Let say it is nosql db. Yoiu can get object data by its id
 public class TestDB {
@@ -16,6 +20,8 @@ public class TestDB {
     public static final String LOYALTY_POINTS = "loyaltyPoints";
     public static final String CHARGE_AMOUNT = "chargeAmount";
     public static final String NEEDS_TO_CHARGE_BATTERY = "needsToChargeBattery";
+    public static final String RIDES = "rides";
+
     private HashMap<Long, HashMap<String, Object>> db = new HashMap<>();
 
     public TestDB(){
@@ -31,6 +37,9 @@ public class TestDB {
         clientData.put(CLIENT_TYPE, "BUSINESS");
         clientData.put(CLIENT_WITH_IMMEDIATE_PAYMENT, false);
         clientData.put(IMMEDIATE_TRANSACTIONS_COUNTER, 32);
+
+        List<Ride> rides = new LinkedList<>();
+        clientData.put(RIDES, rides);
 
         // load client data db
         db.put(clientId, clientData);

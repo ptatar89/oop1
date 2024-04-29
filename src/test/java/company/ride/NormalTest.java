@@ -7,11 +7,10 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static test.java.company.BaseTest.TEST_END_POSITION;
+import static test.java.company.BaseTest.TEST_START_POSITION;
 
 class NormalTest {
-
-    static Position TEST_START_POSITION = Position.from(50.071184F,19.939664F);
-    static Position TEST_END_POSITION = Position.from(50.063928F, 19.960947F);
 
     @Test
     void shouldCalculateDuration() {

@@ -11,7 +11,7 @@ public class SettlementService {
         settlement = SettlementMapper.mapByClientType(client.type());
     }
 
-    public void settle() {
-        settlement.settle(List.of(new Ride()));
+    public void settle(List<Ride> rides) {
+        settlement.settle(rides);
     }
 }

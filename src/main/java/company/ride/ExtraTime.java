@@ -1,9 +1,11 @@
 package company.ride;
 
 import company.maintanace.Position;
+import lombok.Getter;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.time.YearMonth;
 
 public class ExtraTime implements Ride {
 
@@ -12,6 +14,7 @@ public class ExtraTime implements Ride {
     Long extraTime;
 
     RideDetails start;
+
     RideDetails end;
 
     ExtraTime(Long extraTime) {
@@ -42,4 +45,7 @@ public class ExtraTime implements Ride {
         return Duration.between(start.time().plusMinutes(EXTRA_TIME), end.time()).toMinutes();
     }
 
+    public boolean matchByYearMonth(YearMonth yearMonth) {
+        return start.time().getMonth() == yearMonth.getMonth() && start.time().getYear() == yearMonth.getYear();
+    }
 }
