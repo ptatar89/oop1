@@ -1,7 +1,6 @@
 package company.maintanace;
 
 import test.java.company.BaseTest;
-import company.maintanace.Battery;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

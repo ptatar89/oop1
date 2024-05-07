@@ -1,5 +1,6 @@
 package company.repository;
 
+import company.maintanace.Position;
 import company.ride.Ride;
 
 import java.util.HashMap;
@@ -21,6 +22,7 @@ public class TestDB {
     public static final String CHARGE_AMOUNT = "chargeAmount";
     public static final String NEEDS_TO_CHARGE_BATTERY = "needsToChargeBattery";
     public static final String RIDES = "rides";
+    public static final String OFFICE_POSITION = "officePosition";
 
     private HashMap<Long, HashMap<String, Object>> db = new HashMap<>();
 
@@ -54,6 +56,14 @@ public class TestDB {
         // load sco0ter data db
         db.put(scooterId, scooterData);
 
+        //offices data
+        var officeId = 1000L;
+        HashMap<String, Object> officeData = new HashMap<>();
+        officeData.put(OFFICE_POSITION, Position.from(50.071184F,19.939664F));
+        db.put(officeId, officeData);
+        var secondOfficeId = 1100L;
+        officeData.put(OFFICE_POSITION, Position.from(50.063928F, 19.960947F));
+        db.put(secondOfficeId, officeData);
     }
 
     public HashMap<Long, HashMap<String, Object>> getDb() {
@@ -68,6 +78,10 @@ public class TestDB {
     public HashMap<String, Object> getScooterData(Long scooterId){
         //check if exist etc..
         return getDb().get(scooterId);
+    }
+
+    public HashMap<String, Object> getOfficeData(Long officeId){
+        return getDb().get(officeId);
     }
 
     public HashMap<String, Object> storeClientData(Long clientId, HashMap<String, Object> data){

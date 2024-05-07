@@ -4,12 +4,10 @@ import company.maintanace.Position;
 import company.ride.ExtraTime;
 import company.ride.Ride;
 import company.repository.TestDB;
-import company.ride.Normal;
 import company.ride.RideId;
 import org.junit.jupiter.api.BeforeEach;
 
 import java.time.LocalDateTime;
-import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
