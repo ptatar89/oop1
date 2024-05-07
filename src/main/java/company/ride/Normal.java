@@ -35,6 +35,6 @@ public class Normal implements Ride {
     }
 
     public boolean matchByYearMonth(YearMonth yearMonth) {
-        return start.time().getMonth() == yearMonth.getMonth() && start.time().getYear() == yearMonth.getYear();
+        return end.time().getMonth() == yearMonth.getMonth() && end.time().getYear() == yearMonth.getYear();
     }
 }
