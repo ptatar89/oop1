@@ -61,9 +61,11 @@ public class TestDB {
         HashMap<String, Object> officeData = new HashMap<>();
         officeData.put(OFFICE_POSITION, Position.from(50.071184F,19.939664F));
         db.put(officeId, officeData);
+
         var secondOfficeId = 1100L;
-        officeData.put(OFFICE_POSITION, Position.from(50.063928F, 19.960947F));
-        db.put(secondOfficeId, officeData);
+        HashMap<String, Object> secondOfficeData = new HashMap<>();
+        secondOfficeData.put(OFFICE_POSITION, Position.from(50.064192F,19.960776F));
+        db.put(secondOfficeId, secondOfficeData);
     }
 
     public HashMap<Long, HashMap<String, Object>> getDb() {

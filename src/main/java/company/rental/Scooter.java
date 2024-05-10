@@ -11,18 +11,19 @@ public class Scooter {
 
     Object[] scooterData;
 
-    float batteryLevel;
+    Integer batteryLevel;
 
     public Scooter(ScooterId scooterId) {
         HashMap<String, Object> database = new Database().getData();
 
         this.scooterId = scooterId;
         this.scooterData = (Object[]) database.get("scooterData");
-        this.batteryLevel = (float) database.get("batteryLevel");
+        this.batteryLevel = Integer.parseInt((String) database.get("batteryLevel"));
     }
 
     public boolean needsToChargeBattery() {
-        return new Battery(batteryLevel).isNeedsToChargeBattery();
+        return false;
+//        return new Battery(batteryLevel).isNeedsToChargeBattery();
     }
 
     public ScooterId getScooterId() {

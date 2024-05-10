@@ -1,6 +1,5 @@
 package company.ride;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static company.client.ClientType.BUSINESS;
