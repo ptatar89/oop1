@@ -1,19 +1,21 @@
 package company.maintanace;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static company.maintanace.MaintenancePolicy.shouldBeMaintenance;
 
-class PremiumMaintenanceTest {
+class MaintenancePolicyTest {
 
     @ParameterizedTest
     @MethodSource("providePositionForTest")
     void shouldReturnBooleanIfWithinRadius(Position position, Battery battery, Boolean expected) {
-        assertEquals(expected, PremiumMaintenance.shouldBeMaintenance(position, battery));
+        // expected
+        Assertions.assertEquals(expected, shouldBeMaintenance(position, battery));
     }
 
     private static Stream<Arguments> providePositionForTest() {
