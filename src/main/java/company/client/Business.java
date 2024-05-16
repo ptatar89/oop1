@@ -11,13 +11,15 @@ public class Business implements Client {
     boolean clientWithImmediatePayment;
     TransactionCounter immediateTransactionsCounter;
     static final ClientType clientType = BUSINESS;
+    ClientLoyaltyPoints clientLoyaltyPoints;
 
     public Business(ClientId clientId, ClientCredit clientCredit, boolean clientWithImmediatePayment,
-                    TransactionCounter transactionCounter) {
+                    TransactionCounter transactionCounter, ClientLoyaltyPoints loyaltyPoints) {
         this.clientId = clientId;
         this.clientCredit = clientCredit;
         this.clientWithImmediatePayment = clientWithImmediatePayment;
         this.immediateTransactionsCounter = transactionCounter;
+        this.clientLoyaltyPoints = loyaltyPoints;
     }
 
     @Override
@@ -48,5 +50,10 @@ public class Business implements Client {
     @Override
     public ClientType type() {
         return clientType;
+    }
+
+    @Override
+    public ClientLoyaltyPoints getClientLoyaltyPoints() {
+        return clientLoyaltyPoints;
     }
 }

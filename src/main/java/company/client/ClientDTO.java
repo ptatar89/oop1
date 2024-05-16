@@ -4,6 +4,7 @@ import company.loyality.TransactionCounter;
 
 import java.util.Map;
 
+import static company.repository.TestDB.LOYALTY_POINTS;
 import static java.lang.Float.parseFloat;
 import static java.lang.Integer.parseInt;
 import static company.repository.TestDB.CLIENT_CREDIT;
@@ -19,6 +20,7 @@ public class ClientDTO {
     boolean clientWithImmediatePayment;
     TransactionCounter immediateTransactionsCounter;
     ClientType clientType;
+    ClientLoyaltyPoints clientLoyaltyPoints;
 
     public static ClientDTO rawDataToObject(Map<String, Object> clientData) {
         ClientDTO dto = new ClientDTO();
@@ -27,6 +29,7 @@ public class ClientDTO {
         dto.clientWithImmediatePayment = (boolean) clientData.get(CLIENT_WITH_IMMEDIATE_PAYMENT);
         dto.immediateTransactionsCounter = new TransactionCounter(parseInt(clientData.get(IMMEDIATE_TRANSACTIONS_COUNTER).toString()));
         dto.clientType = ClientType.fromName(clientData.get(CLIENT_TYPE).toString());
+        dto.clientLoyaltyPoints = new ClientLoyaltyPoints((long) clientData.get(LOYALTY_POINTS));
 
         return dto;
     }

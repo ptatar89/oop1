@@ -10,13 +10,15 @@ public class Individual implements Client {
     boolean clientWithImmediatePayment;
     TransactionCounter immediateTransactionsCounter;
     static final ClientType clientType = INDIVIDUAL;
+    ClientLoyaltyPoints clientLoyaltyPoints;
 
     public Individual(ClientId clientId, ClientCredit clientCredit, boolean clientWithImmediatePayment,
-                      TransactionCounter transactionCounter) {
+                      TransactionCounter transactionCounter, ClientLoyaltyPoints loyaltyPoints) {
         this.clientId = clientId;
         this.clientCredit = clientCredit;
         this.clientWithImmediatePayment = clientWithImmediatePayment;
         this.immediateTransactionsCounter = transactionCounter;
+        this.clientLoyaltyPoints = loyaltyPoints;
     }
 
     public void immediateTransactionsIncrease() {
@@ -41,5 +43,10 @@ public class Individual implements Client {
     @Override
     public ClientType type() {
         return clientType;
+    }
+
+    @Override
+    public ClientLoyaltyPoints getClientLoyaltyPoints() {
+        return clientLoyaltyPoints;
     }
 }

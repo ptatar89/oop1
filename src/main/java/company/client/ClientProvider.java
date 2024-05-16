@@ -23,7 +23,8 @@ public class ClientProvider {
                         new ClientId(clientData.clientId),
                         clientData.clientCredit,
                         clientData.clientWithImmediatePayment,
-                        clientData.immediateTransactionsCounter
+                        clientData.immediateTransactionsCounter,
+                        clientData.clientLoyaltyPoints
                 );
             }
             case INDIVIDUAL -> {
@@ -31,7 +32,8 @@ public class ClientProvider {
                         new ClientId(clientData.clientId),
                         clientData.clientCredit,
                         clientData.clientWithImmediatePayment,
-                        clientData.immediateTransactionsCounter
+                        clientData.immediateTransactionsCounter,
+                        clientData.clientLoyaltyPoints
                 );
             }
             default -> throw new RuntimeException("not supported client type");

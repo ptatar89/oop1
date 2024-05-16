@@ -7,6 +7,8 @@ public interface Client {
 
     ClientCredit getClientCredit();
 
+    ClientLoyaltyPoints getClientLoyaltyPoints();
+
     boolean isClientWithImmediatePayment();
 
     int getImmediateTransactionsCounter();
