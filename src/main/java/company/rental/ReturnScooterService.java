@@ -3,7 +3,7 @@ package company.rental;
 import company.client.Client;
 import company.client.ClientProvider;
 import company.client.ClientId;
-import company.loyality.Loyalty;
+import company.loyalty.LoyaltyCalculator;
 import company.maintanace.Position;
 import company.price.PriceCalculator;
 import company.repository.TestDB;
@@ -45,12 +45,12 @@ public class ReturnScooterService {
 
         client.immediateTransactionsIncrease();
         clientData.put(IMMEDIATE_TRANSACTIONS_COUNTER, client.getImmediateTransactionsCounter());
-        clientData.put(LOYALTY_POINTS, Loyalty.calculate(minutes, priceAmountClientMultiplicationFactor, chargeAmount));
+        clientData.put(LOYALTY_POINTS, LoyaltyCalculator.calculate(minutes, priceAmountClientMultiplicationFactor, chargeAmount));
         clientData.put(CHARGE_AMOUNT, chargeAmount);
         testDB.storeClientData(clientId.id(), clientData);
 /*
         Database.saveInDatabase(
-                Loyalty.calculate(minutes, price.getPriceAmountClientMultiplicationFactor(), chargeAmount),
+                LoyaltyCalculator.calculate(minutes, price.getPriceAmountClientMultiplicationFactor(), chargeAmount),
                 chargeAmount,
                 scooter.needsToChargeBattery(),
                 new TransactionCounter(client.getImmediateTransactionsCounter())

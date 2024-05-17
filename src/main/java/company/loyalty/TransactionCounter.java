@@ -1,4 +1,4 @@
-package company.loyality;
+package company.loyalty;
 
 public class TransactionCounter {
 

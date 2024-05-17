@@ -1,6 +1,6 @@
 package company.client;
 
-import company.loyality.TransactionCounter;
+import company.loyalty.TransactionCounter;
 
 import static company.client.ClientType.INDIVIDUAL;
 
