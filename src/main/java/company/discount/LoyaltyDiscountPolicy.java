@@ -5,7 +5,7 @@ import company.client.ClientLoyaltyPoints;
 public class LoyaltyDiscountPolicy implements Discount {
 
     private static final int LOYALTY_POINTS_LEVEL = 500;
-    static final double LOYALTY_DISCOUNT = 0.5;
+    static final double LOYALTY_DISCOUNT = 0.05;
     static final double LOYALTY_NO_DISCOUNT = 0;
 
     ClientLoyaltyPoints loyaltyPoints;

@@ -10,14 +10,13 @@ import org.junit.jupiter.api.Test;
 
 import java.time.YearMonth;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static test.java.company.BaseTest.CLIENT_ID;
 import static test.java.company.BaseTest.getListOfRidesForTest;
 
-class SettlementServiceTest {
+class SettlementServiceITTest {
 
     @Test
-    void shouldReturnTimeToSettle() {
+    void shouldReturnPriceToPay() {
         //given
         TestDB testDB = new TestDB();
         var clientData = testDB.getClientData(CLIENT_ID);
@@ -35,7 +34,6 @@ class SettlementServiceTest {
 
         //expected
         Assertions.assertEquals(5L, settleValue);
-
     }
 
 }

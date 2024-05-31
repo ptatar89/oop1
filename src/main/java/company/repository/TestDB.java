@@ -39,6 +39,7 @@ public class TestDB {
         clientData.put(CLIENT_TYPE, "BUSINESS");
         clientData.put(CLIENT_WITH_IMMEDIATE_PAYMENT, false);
         clientData.put(IMMEDIATE_TRANSACTIONS_COUNTER, 32);
+        clientData.put(LOYALTY_POINTS, 0L);
 
         List<Ride> rides = new LinkedList<>();
         clientData.put(RIDES, rides);

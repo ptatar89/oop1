@@ -29,7 +29,7 @@ public class ClientDTO {
         dto.clientWithImmediatePayment = (boolean) clientData.get(CLIENT_WITH_IMMEDIATE_PAYMENT);
         dto.immediateTransactionsCounter = new TransactionCounter(parseInt(clientData.get(IMMEDIATE_TRANSACTIONS_COUNTER).toString()));
         dto.clientType = ClientType.fromName(clientData.get(CLIENT_TYPE).toString());
-        dto.clientLoyaltyPoints = new ClientLoyaltyPoints((long) clientData.get(LOYALTY_POINTS));
+        dto.clientLoyaltyPoints = new ClientLoyaltyPoints((long) parseFloat(clientData.get(LOYALTY_POINTS).toString()));
 
         return dto;
     }
