@@ -1,10 +1,13 @@
 package company.rental;
 
-import company.BaseTest;
-import company.ClientId;
+import test.java.company.BaseTest;
+import company.client.ClientId;
 import company.maintanace.Latitude;
 import company.maintanace.Longitude;
 import company.maintanace.Position;
+import company.rental.ReturnScooterService;
+import company.rental.ScooterId;
+import company.rental.UsageTime;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;

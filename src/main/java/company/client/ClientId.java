@@ -1,4 +1,4 @@
-package company;
+package company.client;
 
 public record ClientId(Long id) {
     public ClientId {

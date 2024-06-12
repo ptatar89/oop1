@@ -1,6 +1,11 @@
 package company.repository;
 
+import company.maintanace.Position;
+import company.ride.Ride;
+
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 
 //Generic db, Let say it is nosql db. Yoiu can get object data by its id
 public class TestDB {
@@ -8,6 +13,7 @@ public class TestDB {
     public static final String SCOOTER_DATA = "scooterData";
     public static final String CLIENT_WITH_IMMEDIATE_PAYMENT = "clientWithImmediatePayment";
     public static final String CLIENT_CREDIT = "clientCredit";
+    public static final String CLIENT_TYPE = "clientType";
     public static final String IMMEDIATE_TRANSACTIONS_COUNTER = "immediateTransactionsCounter";
     public static final String SCOOTER_ID = "scooterId";
     public static final String BATTERY_LEVEL = "batteryLevel";
@@ -15,6 +21,9 @@ public class TestDB {
     public static final String LOYALTY_POINTS = "loyaltyPoints";
     public static final String CHARGE_AMOUNT = "chargeAmount";
     public static final String NEEDS_TO_CHARGE_BATTERY = "needsToChargeBattery";
+    public static final String RIDES = "rides";
+    public static final String OFFICE_POSITION = "officePosition";
+
     private HashMap<Long, HashMap<String, Object>> db = new HashMap<>();
 
     public TestDB(){
@@ -27,8 +36,13 @@ public class TestDB {
 
         clientData.put(CLIENT_ID, clientId);
         clientData.put(CLIENT_CREDIT, 123.23f);
-        clientData.put(CLIENT_WITH_IMMEDIATE_PAYMENT, true);
+        clientData.put(CLIENT_TYPE, "BUSINESS");
+        clientData.put(CLIENT_WITH_IMMEDIATE_PAYMENT, false);
         clientData.put(IMMEDIATE_TRANSACTIONS_COUNTER, 32);
+        clientData.put(LOYALTY_POINTS, 0L);
+
+        List<Ride> rides = new LinkedList<>();
+        clientData.put(RIDES, rides);
 
         // load client data db
         db.put(clientId, clientData);
@@ -43,6 +57,16 @@ public class TestDB {
         // load sco0ter data db
         db.put(scooterId, scooterData);
 
+        //offices data
+        var officeId = 1000L;
+        HashMap<String, Object> officeData = new HashMap<>();
+        officeData.put(OFFICE_POSITION, Position.from(50.071184F,19.939664F));
+        db.put(officeId, officeData);
+
+        var secondOfficeId = 1100L;
+        HashMap<String, Object> secondOfficeData = new HashMap<>();
+        secondOfficeData.put(OFFICE_POSITION, Position.from(50.064192F,19.960776F));
+        db.put(secondOfficeId, secondOfficeData);
     }
 
     public HashMap<Long, HashMap<String, Object>> getDb() {
@@ -57,6 +81,10 @@ public class TestDB {
     public HashMap<String, Object> getScooterData(Long scooterId){
         //check if exist etc..
         return getDb().get(scooterId);
+    }
+
+    public HashMap<String, Object> getOfficeData(Long officeId){
+        return getDb().get(officeId);
     }
 
     public HashMap<String, Object> storeClientData(Long clientId, HashMap<String, Object> data){

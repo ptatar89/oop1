@@ -1,18 +1,16 @@
 package company.maintanace;
 
 public class Battery {
+    Integer level;
 
-    private static final float LOWEST_NOT_NEED_TO_CHARGE_BATTERY_LEVEL = 0.07f;
+    private final static Integer MIN_LEVEL = 0;
+    private final static Integer MAX_LEVEL = 100;
 
-    boolean needsToChargeBattery = false;
-
-    public Battery(float batteryLevel) {
-        if (batteryLevel < LOWEST_NOT_NEED_TO_CHARGE_BATTERY_LEVEL) {
-            needsToChargeBattery = true;
+    public Battery(Integer level) {
+        if (level < MIN_LEVEL || level > MAX_LEVEL) {
+            throw new RuntimeException("Battery level is over limit");
         }
-    }
 
-    public boolean isNeedsToChargeBattery() {
-        return needsToChargeBattery;
+        this.level = level;
     }
 }

@@ -1,9 +1,9 @@
-package company.loyality;
+package company.loyalty;
 
 
 import company.rental.UsageTime;
 
-public class Loyalty {
+public class LoyaltyCalculator {
 
     //potencial bad implementation, because scooter service need to use that method. It should be used only in the scope of this package.
     public static int calculate(UsageTime minutes, float priceAmountClientMultiplicationFactor, float chargeAmount) {

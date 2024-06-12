@@ -1,23 +1,25 @@
 package company.maintanace;
 
-import company.BaseTest;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
+import test.java.company.BaseTest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class BatteryTest extends BaseTest {
 
     @Test
-    void shouldSetNeedsToChargeBatteryAccordingToBatteryLevelValue() {
-        //given
-        float batteryLevelWhichNeedToBeCharged = 0.05f;
-        float batteryLevelWhichNotNeedToBeCharged = 0.08f;
+    void shouldReturnBatteryLevelValue() {
+        Battery battery = new Battery(1);
 
-        //when
-        Battery batteryWhichNeedsToBeCharged = new Battery(batteryLevelWhichNeedToBeCharged);
-        Battery batteryWhichNotNeedsToBeCharged = new Battery(batteryLevelWhichNotNeedToBeCharged);
+        Assertions.assertEquals(1, battery.level);
+    }
 
-        //then
-        Assertions.assertTrue(batteryWhichNeedsToBeCharged.isNeedsToChargeBattery());
-        Assertions.assertFalse(batteryWhichNotNeedsToBeCharged.isNeedsToChargeBattery());
+    @ParameterizedTest
+    @ValueSource(ints = {-3, 115, Integer.MIN_VALUE, Integer.MAX_VALUE})
+    void shouldThrowExceptionOnWrongBatteryLevelValue(Integer level) {
+        Assertions.assertThrows(RuntimeException.class, () -> {
+            new Battery(level);
+        });
     }
 }
